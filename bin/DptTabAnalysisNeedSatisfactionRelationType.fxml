@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane prefHeight="364.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ChoiceBox fx:id="cb_useReq" layoutX="81.0" layoutY="232.0" prefHeight="25.0" prefWidth="169.0" >
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Optional" />
+            		<String fx:value="Suggested" />
+           		    <String fx:value="Required" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <Label layoutX="14.0" layoutY="236.0" prefHeight="34.0" prefWidth="53.0" text="Use required" wrapText="true" />
+      <Label layoutX="318.0" layoutY="6.0" prefHeight="34.0" prefWidth="68.0" text="Provides information" wrapText="true" />
+      <ListView fx:id="lv_provInfo" layoutX="393.0" layoutY="10.0" prefHeight="196.0" prefWidth="191.0" />
+      <Label layoutX="14.0" layoutY="15.0" text="Choose IS" />
+      <ListView fx:id="lv_chooseIs" layoutX="81.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="531.0" layoutY="325.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="53.0" text="Save" />
+   </children>
+</AnchorPane>

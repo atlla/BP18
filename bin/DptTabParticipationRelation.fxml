@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="16.0" layoutY="14.0" prefHeight="55.0" prefWidth="52.0" text="Choose org. structure" wrapText="true" />
+      <Label layoutX="300.0" layoutY="351.0" prefHeight="55.0" prefWidth="64.0" text="Entitled to authorize decision" wrapText="true" />
+      <Label layoutX="300.0" layoutY="179.0" text="Role" />
+      <Label layoutX="300.0" layoutY="226.0" prefHeight="37.0" prefWidth="73.0" text="Participation required" wrapText="true" />
+      <Label layoutX="300.0" layoutY="284.0" prefHeight="55.0" prefWidth="64.0" text="Suggested attendance level" wrapText="true" />
+      <Label layoutX="300.0" layoutY="20.0" prefHeight="37.0" prefWidth="73.0" text="Participation details" wrapText="true" />
+      <CheckBox fx:id="chkB_EntitledToAuthDec" disable="true" layoutX="385.0" layoutY="357.0" mnemonicParsing="false" />
+      <ChoiceBox fx:id="cb_role" disable="true" layoutX="385.0" layoutY="175.0" prefHeight="25.0" prefWidth="170.0" value="Preparation">
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Preparation" />
+            		<String fx:value="Responsible" />
+           		    <String fx:value="Advisory" />
+           		    <String fx:value="Authorization" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <ChoiceBox fx:id="cb_partReq" disable="true" layoutX="385.0" layoutY="226.0" prefHeight="25.0" prefWidth="170.0" value="Optional">
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Optional" />
+            		<String fx:value="Suggested" />
+           		    <String fx:value="Required" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <ChoiceBox fx:id="cb_suggDet" disable="true" layoutX="385.0" layoutY="286.0" prefHeight="25.0" prefWidth="170.0" value="Low">
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Low" />
+            		<String fx:value="Medium" />
+           		    <String fx:value="High" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <TextArea fx:id="ta_partDet" disable="true" layoutX="385.0" layoutY="25.0" prefHeight="124.0" prefWidth="198.0" />
+      <Button layoutX="78.0" layoutY="406.0" mnemonicParsing="false" onAction="#btn_addOrgStruct" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button fx:id="btn_editOrgStruct" disable="true" layoutX="151.0" layoutY="362.0" mnemonicParsing="false" onAction="#btn_editOrgStructAction" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="224.0" layoutY="362.0" mnemonicParsing="false" onAction="#btn_detOrgStructAction" prefHeight="25.0" prefWidth="52.0" text="Details" />
+      <Button layoutX="534.0" layoutY="406.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
+      <TableView fx:id="tv_OrgStruct" layoutX="78.0" layoutY="22.0" prefHeight="323.0" prefWidth="198.0">
+        <columns>
+          <TableColumn fx:id="tc_name" prefWidth="99.0" text="Name" />
+          <TableColumn fx:id="tc_type" prefWidth="99.0" text="Type" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="cb_chooseTypeToAdd" layoutX="142.0" layoutY="406.0" prefHeight="25.0" prefWidth="134.0" />
+      <Label layoutX="10.0" layoutY="397.0" prefHeight="44.0" prefWidth="64.0" text="Choose type to add" wrapText="true" />
+   </children>
+</AnchorPane>

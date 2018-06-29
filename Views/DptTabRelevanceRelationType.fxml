@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<ScrollPane prefHeight="430.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane prefHeight="410.0" prefWidth="750.0">
+      	<children>
+      		<Label layoutX="14.0" layoutY="14.0" prefHeight="68.0" prefWidth="48.0" text="Choose Decision Premise Type" wrapText="true" />
+      		<Label layoutX="14.0" layoutY="359.0" prefHeight="35.0" prefWidth="78.0" text="Consideration required" wrapText="true" />
+      		<Button layoutX="230.0" layoutY="304.0" mnemonicParsing="false" onAction="#btn_addDecPremTypeAction" prefHeight="25.0" prefWidth="55.0" text="Add" />
+      		<Button layoutX="330.0" layoutY="266.0" mnemonicParsing="false" onAction="#btn_decPremTeditAction" prefHeight="25.0" prefWidth="55.0" text="Edit" />
+      		<Button layoutX="681.0" layoutY="365.0" mnemonicParsing="false" onAction="#btn_save" prefHeight="25.0" prefWidth="55.0" text="Save" />
+      		<ChoiceBox fx:id="cb_ChooseTypeToAdd" layoutX="104.0" layoutY="266.0" prefHeight="25.0" prefWidth="181.0" value="Choose Type">
+      			<items>
+      				<FXCollections fx:factory="observableArrayList">					
+      					<String fx:value="Decision goal" />
+      					<String fx:value="Engagement goal" />
+      					<String fx:value="Symbolic goal" />
+      					<String fx:value="Action variable" />
+      					<String fx:value="Environmental factor" />
+      				</FXCollections>
+      			</items>
+      		</ChoiceBox>
+      		<Label layoutX="14.0" layoutY="265.0" prefHeight="51.0" prefWidth="48.0" text="Choose type to add" wrapText="true" />
+      		<ChoiceBox fx:id="cb_consReq" disable="true" layoutX="104.0" layoutY="364.0" prefHeight="25.0" prefWidth="181.0" value="Optional">
+      			<items>
+      				<FXCollections fx:factory="observableArrayList">
+      					<String fx:value="Optional" />
+      					<String fx:value="Suggested" />
+      					<String fx:value="Required" />
+      				</FXCollections>
+      			</items>
+      		</ChoiceBox>
+      		<TableView fx:id="tv_corrSuppReq" layoutX="534.0" layoutY="14.0" prefHeight="236.0" prefWidth="200.0">
+      			<columns>
+      				<TableColumn fx:id="tc_corrSuppReqName" prefWidth="99.0" text="Name" />
+      				<TableColumn fx:id="tc_corrSuppReqType" prefWidth="99.0" text="Type" />
+      			</columns>
+      		</TableView>
+      		<Label layoutX="449.0" layoutY="15.0" prefHeight="51.0" prefWidth="85.0" text="Corresponding support requirements" wrapText="true" />
+            <TableView fx:id="tv_DecPremTypes" layoutX="104.0" layoutY="14.0" prefHeight="236.0" prefWidth="281.0">
+              <columns>
+                <TableColumn fx:id="tc_decPremName" prefWidth="140.5" text="Name" />
+                <TableColumn fx:id="tc_decPremType" prefWidth="140.5" text="Type" />
+              </columns>
+            </TableView>
+      	</children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="322.0" prefWidth="296.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Name" />
+      <Label layoutX="14.0" layoutY="58.0" text="Description" />
+      <TextField fx:id="tf_name" layoutX="86.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextArea fx:id="ta_description" layoutX="86.0" layoutY="58.0" prefHeight="161.0" prefWidth="200.0" />
+      <Label layoutX="14.0" layoutY="242.0" text="Staff" />
+      <CheckBox fx:id="chkb_staff" layoutX="86.0" layoutY="242.0" mnemonicParsing="false" />
+      <Button layoutX="228.0" layoutY="283.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="54.0" text="Save" />
+   </children>
+</AnchorPane>

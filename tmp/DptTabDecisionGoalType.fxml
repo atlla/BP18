@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane prefHeight="599.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Name" />
+      <Label layoutX="14.0" layoutY="65.0" text="Description" />
+      <TextField fx:id="tf_name" layoutX="88.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextArea fx:id="ta_description" layoutX="88.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+      <ListView fx:id="lv_justification" layoutX="88.0" layoutY="262.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="14.0" layoutY="262.0" text="Justification" />
+      <Button layoutX="88.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn_addJustiAction" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="162.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn_editJustiAction" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="235.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn_delJustiAction" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Button layoutX="558.0" layoutY="560.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
+      <Label layoutX="332.0" layoutY="6.0" prefHeight="58.0" prefWidth="71.0" text="Added Support requirements" wrapText="true" />
+      <TableView fx:id="tv_addedSuppReqT" layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tc_addedName" prefWidth="99.5" text="Name" />
+          <TableColumn fx:id="tc_addedType" prefWidth="99.5" text="Type" />
+        </columns>
+      </TableView>
+      <Label layoutX="332.0" layoutY="262.0" prefHeight="58.0" prefWidth="71.0" text="Available Support Req." wrapText="true" />
+      <TableView fx:id="tv_availSuppReqT" layoutX="410.0" layoutY="262.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tc_availName" prefWidth="99.5" text="Name" />
+          <TableColumn fx:id="tc_availType" prefWidth="99.5" text="Type" />
+        </columns>
+      </TableView>
+      <Button layoutX="410.0" layoutY="223.0" mnemonicParsing="false" onAction="#btn_addToAddedSuppReq" prefHeight="17.0" prefWidth="24.0" text="^" wrapText="true" />
+      <Button layoutX="573.0" layoutY="223.0" mnemonicParsing="false" onAction="#btn_delAddedSuppReq" prefHeight="25.0" prefWidth="37.0" text="Del" />
+      <Button layoutX="510.0" layoutY="223.0" mnemonicParsing="false" onAction="#btn_editAddedSuppReq" text="Edit" />
+      <Button layoutX="558.0" layoutY="517.0" mnemonicParsing="false" onAction="#btn_addAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="484.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn_editAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="558.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn_delAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <ChoiceBox fx:id="cb_SuppReqTypeToAdd" layoutX="410.0" layoutY="517.0" prefHeight="25.0" prefWidth="143.0" >
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Analysis need" />
+            		<String fx:value="Information need" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <Label layoutX="332.0" layoutY="513.0" prefHeight="34.0" prefWidth="71.0" text="Choose type to add" wrapText="true" />
+   </children>
+</AnchorPane>

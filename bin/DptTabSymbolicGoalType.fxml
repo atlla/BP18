@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane prefHeight="618.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane prefHeight="601.0" prefWidth="967.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Name" />
+            <Label layoutX="14.0" layoutY="59.0" text="Description" />
+            <Label layoutX="14.0" layoutY="230.0" text="Justification" />
+            <TextField fx:id="tf_name" layoutX="83.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" />
+            <TextArea fx:id="ta_description" layoutX="83.0" layoutY="59.0" prefHeight="157.0" prefWidth="200.0" wrapText="true" />
+            <ListView fx:id="lv_justification" layoutX="83.0" layoutY="230.0" prefHeight="166.0" prefWidth="200.0" />
+            <Label layoutX="320.0" layoutY="14.0" text="Target group" />
+            <TextField fx:id="tf_targGrp" layoutX="439.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0" />
+            <TextArea fx:id="ta_targGrpDescr" layoutX="439.0" layoutY="59.0" prefHeight="157.0" prefWidth="200.0" wrapText="true" />
+            <Label layoutX="320.0" layoutY="58.0" prefHeight="37.0" prefWidth="89.0" text="Target group description" wrapText="true" />
+            <Label layoutX="320.0" layoutY="229.0" prefHeight="37.0" prefWidth="89.0" text="Type of announcement" wrapText="true" />
+            <TextField fx:id="tf_typeOfAnn" layoutX="439.0" layoutY="235.0" prefHeight="25.0" prefWidth="200.0" />
+            <Button layoutX="83.0" layoutY="405.0" mnemonicParsing="false" onAction="#btn_addJustifAction" prefHeight="25.0" prefWidth="52.0" text="Add" />
+            <Button layoutX="894.0" layoutY="565.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
+            <AnchorPane layoutX="655.0" layoutY="-1.0" prefHeight="558.0" prefWidth="306.0">
+               <children>
+                  <fx:include fx:id="embeddedSuppReqView" source="DptTabSupportRequirementType.fxml" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

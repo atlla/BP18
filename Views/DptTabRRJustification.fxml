@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane prefHeight="567.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ChoiceBox fx:id="cb_RatSpec" layoutX="87.0" layoutY="235.0" prefHeight="25.0" prefWidth="176.0">
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Coherence rationale spec" />
+            		<String fx:value="Consensus rationale spec" />
+           		    <String fx:value="Correspondence rationale spec" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <Label layoutX="14.0" layoutY="14.0" text="Description" />
+      <TextArea fx:id="ta_description" layoutX="87.0" layoutY="14.0" prefHeight="200.0" prefWidth="326.0" wrapText="true" />
+      <Label fx:id="lb_ConRsProposition" layoutX="14.0" layoutY="286.0" text="Proposition" visible="false" />
+      <Label fx:id="lb_ConRsPrelAffirm" layoutX="14.0" layoutY="400.0" prefHeight="38.0" prefWidth="61.0" text="Preliminary affirmation" visible="false" wrapText="true" />
+      <TextArea fx:id="ta_ConRsProp" layoutX="87.0" layoutY="286.0" prefHeight="93.0" prefWidth="326.0" visible="false" />
+      <TextArea fx:id="ta_ConRsPrelAffirm" layoutX="87.0" layoutY="400.0" prefHeight="93.0" prefWidth="326.0" visible="false" />
+      <Label fx:id="lb_CohRsDiscussion" layoutX="17.0" layoutY="286.0" text="Discussion" visible="false" />
+      <Label fx:id="lb_CohRsSource" layoutX="17.0" layoutY="400.0" text="Source" visible="false" />
+      <TextArea fx:id="ta_CohRsDiscussion" layoutX="87.0" layoutY="286.0" prefHeight="93.0" prefWidth="326.0" visible="false" />
+      <TextArea fx:id="ta_CohRsSource" layoutX="87.0" layoutY="400.0" prefHeight="93.0" prefWidth="326.0" visible="false" />
+      <Button layoutX="357.0" layoutY="521.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="56.0" text="Save" />
+      <Label layoutX="14.0" layoutY="229.0" prefHeight="38.0" prefWidth="61.0" text="Rationale spec" wrapText="true" />
+      <Label fx:id="lb_CorRsSource" layoutX="14.0" layoutY="286.0" text="Source" visible="false" />
+      <TextArea fx:id="ta_CorRsSource" layoutX="87.0" layoutY="279.0" prefHeight="93.0" prefWidth="326.0" visible="false" />
+      <Label fx:id="lb_CorRsValidity" layoutX="14.0" layoutY="400.0" text="Validity" visible="false" />
+      <Label fx:id="lb_CorRsReliability" layoutX="14.0" layoutY="461.0" text="Reliability" visible="false" />
+      <TextField fx:id="tf_CorRsValidity" layoutX="88.0" layoutY="396.0" prefHeight="25.0" prefWidth="150.0" visible="false" />
+      <TextField fx:id="tf_CorRsReliability" layoutX="87.0" layoutY="457.0" prefHeight="25.0" prefWidth="150.0" visible="false" />
+   </children>
+</AnchorPane>

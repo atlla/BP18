@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainScreenController">
+   <children>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#newDpt" text="Decision Process Type" />
+                        <MenuItem mnemonicParsing="false" onAction="#newDpi" text="Decision Process Instance" />
+                        <Menu mnemonicParsing="false" text="Type">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Information">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#newInfoSys" text="Information system type" />
+                                  <MenuItem mnemonicParsing="false" onAction="#addInfoType" text="Information type" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Organizational Units">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#addBoardType" text="Board" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addCommitteeType" text="Committee" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addPositionType" text="Position" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addRoleType" text="Role" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Decision premise">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#addDecGoalType" text="Decision goal" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addEngGoalType" text="Engagement goal" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addSymbGoalType" text="Symbolic goal" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addActionVarType" text="Action variable" />
+                                    <MenuItem mnemonicParsing="false" onAction="#addEnvFacType" text="Environmental factor" />
+                                </items>
+                              </Menu>
+                          </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit types">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#newDptEditTab" text="Decision Process Type" />
+                     </items>
+                  </Menu>
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ListView layoutY="25.0" prefHeight="743.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <TabPane fx:id="tabPane" layoutX="160.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+   </children>
+</AnchorPane>

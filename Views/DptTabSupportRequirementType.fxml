@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="566.0" prefWidth="299.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controllertypelevel.SuppReqHelperController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="75.0" text="Added support requirements" wrapText="true" />
+      <Button fx:id="btn_addSuppReqToList" layoutX="96.0" layoutY="231.0" mnemonicParsing="false" onAction="#btn_addToAddedSuppReq" prefHeight="24.0" text="^" />
+      <Label layoutX="14.0" layoutY="521.0" prefHeight="34.0" prefWidth="71.0" text="Choose type to add" wrapText="true" />
+      <ChoiceBox fx:id="cb_SuppReqTypeToAdd" layoutX="92.0" layoutY="525.0" prefHeight="25.0" prefWidth="143.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Analysis need" />
+               <String fx:value="Information need" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Button layoutX="240.0" layoutY="485.0" mnemonicParsing="false" onAction="#btn_delAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Button layoutX="166.0" layoutY="485.0" mnemonicParsing="false" onAction="#btn_editAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="240.0" layoutY="525.0" mnemonicParsing="false" onAction="#btn_addAvailSuppReq" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="192.0" layoutY="231.0" mnemonicParsing="false" onAction="#btn_editAddedSuppReq" text="Edit" />
+      <Button layoutX="255.0" layoutY="231.0" mnemonicParsing="false" onAction="#btn_delAddedSuppReq" prefHeight="25.0" prefWidth="37.0" text="Del" />
+      <TableView fx:id="tv_availSuppReqT" layoutX="92.0" layoutY="270.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="tc_availName" prefWidth="99.5" text="Name" />
+            <TableColumn fx:id="tc_availType" prefWidth="99.5" text="Type" />
+         </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="270.0" prefHeight="58.0" prefWidth="71.0" text="Available Support Req." wrapText="true" />
+      <TableView fx:id="tv_addedSuppReqT" layoutX="92.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="tc_addedName" prefWidth="99.5" text="Name" />
+            <TableColumn fx:id="tc_addedType" prefWidth="99.5" text="Type" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

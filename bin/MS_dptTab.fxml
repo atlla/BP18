@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="8.0" layoutY="334.0" text="Stimulustype" />
+      <TextField fx:id="tf_name" layoutX="105.0" layoutY="10.0" prefHeight="25.0" prefWidth="204.0" AnchorPane.leftAnchor="105.0" />
+      <Label layoutX="6.0" layoutY="70.0" text="General Aim" AnchorPane.leftAnchor="6.0" />
+      <TextArea fx:id="tf_generalAim" layoutX="106.0" layoutY="70.0" prefHeight="87.0" prefWidth="204.0" wrapText="true" AnchorPane.leftAnchor="106.0" />
+      <ChoiceBox fx:id="cb_activityFocus" layoutX="104.0" layoutY="197.0" prefHeight="25.0" prefWidth="204.0" value="Problem analysis">  
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Problem analysis" />
+            		<String fx:value="Problem solving" />
+           		    <String fx:value="Search" />
+           		    <String fx:value="Choice" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <Label layoutX="7.0" layoutY="201.0" text="Activity Focus" />
+      <Label layoutX="7.0" layoutY="269.0" text="Presumed Impact" />
+      <ChoiceBox fx:id="cb_presumedImpact" layoutX="104.0" layoutY="265.0" prefHeight="25.0" prefWidth="204.0" value="Low">
+      		<items>
+      			<FXCollections fx:factory="observableArrayList">
+      				<String fx:value="Low" />
+            		<String fx:value="Medium" />
+           		    <String fx:value="High" />
+      			</FXCollections>
+      		</items>
+      </ChoiceBox>
+      <Button layoutX="105.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_addStimType" text="  Add  " />
+      <Button layoutX="258.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_delStimType" text="Delete" />
+      <Button layoutX="182.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_editStimType" prefHeight="25.0" prefWidth="51.0" text="Edit" />
+      <Label layoutX="7.0" layoutY="14.0" text="Name" />
+      <ListView fx:id="lv_stimTypes" layoutX="105.0" layoutY="334.0" prefHeight="87.0" prefWidth="204.0" />
+      <Label layoutX="420.0" layoutY="5.0" prefHeight="52.0" prefWidth="73.0" text="Participating org. structures" wrapText="true" />
+      <ListView fx:id="lv_partTypes" layoutX="493.0" layoutY="7.0" prefHeight="152.0" prefWidth="200.0" />
+      <Button layoutX="493.0" layoutY="171.0" mnemonicParsing="false" onAction="#btn_addPartRelType" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="567.0" layoutY="171.0" mnemonicParsing="false" onAction="#btn_editPartType" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="641.0" layoutY="171.0" mnemonicParsing="false" onAction="#btn_delPartType" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Label layoutX="420.0" layoutY="270.0" prefHeight="52.0" prefWidth="52.0" text="Relevant decision premises" wrapText="true" />
+      <ListView fx:id="lv_relDecPrem" layoutX="493.0" layoutY="269.0" prefHeight="152.0" prefWidth="200.0" />
+      <Button layoutX="493.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_addRelevanceRelType" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="567.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_editRelevanceRel" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="641.0" layoutY="433.0" mnemonicParsing="false" onAction="#btn_delRelevanceRel" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Button layoutX="642.0" layoutY="511.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="51.0" text="Save" />
+   </children>
+</AnchorPane>
