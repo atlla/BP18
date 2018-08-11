@@ -29,7 +29,7 @@ public class StageFactory {
 			stage.setScene(new Scene(loader.load()));
 			// Wenn die neue Stage gestartet wird, werden die Eingaben auf
 			// anderen Stages blockiert
-			// --> Also ausschließlich Eingaben in neuem Fenster möglich, bis
+			// --> Also ausschlieï¿½lich Eingaben in neuem Fenster mï¿½glich, bis
 			// dieses
 			// geschlossen wird
 			stage.initModality(Modality.APPLICATION_MODAL);

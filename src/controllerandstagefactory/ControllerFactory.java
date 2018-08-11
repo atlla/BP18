@@ -9,7 +9,9 @@ import controllertypelevel.BoardTypeController;
 import controllertypelevel.ChooseDptEditController;
 import controllertypelevel.CommitteeTypeController;
 import controllertypelevel.DecisionGoalTypeController;
+import controllertypelevel.DpiTabController;
 import controllertypelevel.IDecisionPremiseTypeController;
+import controllertypelevel.IDpiTabController;
 import controllertypelevel.DptTabController;
 import controllertypelevel.EngagementGoalTypeController;
 import controllertypelevel.EnvironmentalFactorTypeController;
@@ -39,6 +41,7 @@ import decisionpremise.FactualDecisionPremiseType;
 import decisionpremise.PresumedInfluenceRelationType;
 import decisionpremise.RelevanceRelationType;
 import decisionpremise.SymbolicGoalType;
+import decisionprocess.DecisionProcessInstance;
 import decisionprocess.DecisionProcessType;
 import decisionprocess.StimulusType;
 import helpercomponents.Views;
@@ -58,7 +61,7 @@ import supportrequirements.InformationType;
 import supportrequirements.SupportRequirementType;
 
 //Diese Klasse bietet statische Methoden an um die korrespondierenden Controller zu einer View zu erzeugen
-//In Kombination mit der Klasse StageFactory ließ sich der Code zu Erzeugung von Controllern und Stages erheblich reduzieren
+//In Kombination mit der Klasse StageFactory lieï¿½ sich der Code zu Erzeugung von Controllern und Stages erheblich reduzieren
 public final class ControllerFactory {
 
 	private ControllerFactory() {
@@ -69,6 +72,14 @@ public final class ControllerFactory {
 
 		IDptTabController con = new DptTabController();
 		con.setDpt(dpt);
+		con.setTabPane(tPane);
+		con.setEntityManager(em);
+
+		return con;
+	}
+	public static IDpiTabController getDpiTabController(DecisionProcessInstance dpi, TabPane tPane, EntityManager em) {
+		IDpiTabController con = new DpiTabController();
+		con.setDpi(dpi);
 		con.setTabPane(tPane);
 		con.setEntityManager(em);
 

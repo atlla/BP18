@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 
 import javax.persistence.EntityManager;
 
+import controllertypelevel.IDpiTabController;
 import controllertypelevel.IDptTabController;
 import helpercomponents.Views;
 import javafx.event.Event;
@@ -40,7 +41,23 @@ public final class TabFactory {
 			e.printStackTrace();
 		}
 	}
-	
+	public static void createAndShowDpiTab(String viewName, String title, IDpiTabController con) throws IOException {
+		
+		try {
+			Tab tab = new Tab(title);
+			FXMLLoader loader = new FXMLLoader(new File(Views.MSDECPROCINSTTAB).toURI().toURL());
+			con.setDpiTab(tab);
+			loader.setController(con);
+			setCloseTabListener(con.getTpane(), tab, con.getEm());
+			tab.setContent(loader.load());
+			con.getTpane().getTabs().add(tab);
+			con.getTpane().getSelectionModel().select(tab);
+			
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+		}
+	}
 	// Listener, wenn dass Tab geschlossen werden soll
 	private static void setCloseTabListener(TabPane tPane, Tab tab, EntityManager em) {
 

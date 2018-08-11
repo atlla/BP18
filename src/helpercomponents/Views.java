@@ -19,6 +19,7 @@ public abstract class Views {
 	public static final String EXISTINGINFORMATIONVIEW = "Views/ExistingInformation.fxml";
 	public static final String INFORMATIONSYSTEMTYPE = "Views/InformationSystemType.fxml";
 	public static final String MSDECPROCTYPETAB = "Views/MS_dptTab.fxml";
+	public static final String MSDECPROCINSTTAB = "Views/MS_dpiTab.fxml";
 	public static final String MAINSCREEN = "Views/MainScreen.fxml";
 	public static final String NEWINFORMATIONTYPE = "Views/NewInformationType.fxml";
 	public static final String PARTICIPATIONRELATIONTYPE = "Views/DptTabParticipationrelationType.fxml";

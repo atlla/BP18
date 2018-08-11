@@ -12,6 +12,7 @@ import controllerandstagefactory.StageFactory;
 import controllerandstagefactory.TabFactory;
 import controllertypelevel.IControllerTypeLevel;
 import controllertypelevel.IDptTabController;
+import controllertypelevel.IDpiTabController;
 import database.DatabaseManager;
 import decisionpremise.ActionVariableType;
 import decisionpremise.DecisionGoalType;
@@ -19,6 +20,7 @@ import decisionpremise.EngagementGoalType;
 import decisionpremise.EnvironmentalFactorType;
 import decisionpremise.SymbolicGoalType;
 import decisionprocess.DecisionProcessType;
+import decisionprocess.DecisionProcessInstance;
 import helpercomponents.Views;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -58,7 +60,7 @@ public class MainScreenController {
 		Platform.exit();
 	}
 
-	// neues Tab zur Eingabe für Decision Process Types
+	// neues Tab zur Eingabe fï¿½r Decision Process Types
 	@FXML
 	void newDpt(ActionEvent event) throws IOException {
 
@@ -92,7 +94,7 @@ public class MainScreenController {
 		}
 	}
 
-	// Tab schließen Listener
+	// Tab schlieï¿½en Listener
 	public void setCloseTabListener(Tab tab, EntityManager em) {
 
 		tab.setOnCloseRequest(new EventHandler<Event>() {
@@ -122,14 +124,24 @@ public class MainScreenController {
 		});
 	}
 
-	// neues Tab zur Eingabe für Decision Process Instances
+	// neues Tab zur Eingabe fï¿½r Decision Process Instances
 	@FXML
-	void newDpi(ActionEvent event) {
+	void newDpi(ActionEvent event) throws IOException {
 
+		try {
+
+			IDpiTabController con = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
+					DatabaseManager.getInstance().getEmf().createEntityManager());
+			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con);
+			
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+		}
 	}
 
-	// Methoden zur Eingabe von Typen (die unabhängig von einem DPT etc.
-	// eingegeben werden können!)
+	// Methoden zur Eingabe von Typen (die unabhï¿½ngig von einem DPT etc.
+	// eingegeben werden kï¿½nnen!)
 	@FXML
 	void newInfoSys(ActionEvent event) {
 
