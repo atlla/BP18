@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="405.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="430.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="14.0" layoutY="28.0" text="Name" />
       <TextField fx:id="tf_name" layoutX="87.0" layoutY="24.0" prefHeight="25.0" prefWidth="188.0" />
       <Label layoutX="14.0" layoutY="76.0" text="Description" />
-      <Label layoutX="14.0" layoutY="191.0" text="Valency" />
-      <Label layoutX="14.0" layoutY="249.0" prefHeight="37.0" prefWidth="61.0" text="Common Frequency" wrapText="true" />
-      <Label layoutX="14.0" layoutY="308.0" prefHeight="49.0" prefWidth="61.0" text="Common Urgency" wrapText="true" />
+      <Label layoutX="14.0" layoutY="179.0" text="Valency" />
+      <Label layoutX="14.0" layoutY="218.0" prefHeight="37.0" prefWidth="61.0" text="Common Frequency" wrapText="true" />
+      <Label layoutX="14.0" layoutY="262.0" prefHeight="49.0" prefWidth="61.0" text="Common Urgency" wrapText="true" />
       <TextArea fx:id="ta_Description" layoutX="87.0" layoutY="76.0" prefHeight="82.0" prefWidth="188.0" wrapText="true" />
-      <ChoiceBox fx:id="cb_Valency" layoutX="87.0" layoutY="187.0" prefHeight="25.0" prefWidth="188.0" value="Opportunity">
+      <ChoiceBox fx:id="cb_Valency" layoutX="87.0" layoutY="175.0" prefHeight="25.0" prefWidth="188.0" value="Opportunity">
       		<items>
       			<FXCollections fx:factory="observableArrayList">
       				<String fx:value="Opportunity" />
@@ -25,7 +25,7 @@
       			</FXCollections>
       		</items>
       </ChoiceBox>
-      <ChoiceBox fx:id="cb_CommonFreq" layoutX="87.0" layoutY="255.0" prefHeight="25.0" prefWidth="188.0" value="Exceptional">
+      <ChoiceBox fx:id="cb_CommonFreq" layoutX="87.0" layoutY="224.0" prefHeight="25.0" prefWidth="188.0" value="Exceptional">
       		<items>
       			<FXCollections fx:factory="observableArrayList">
       				<String fx:value="Exceptional" />
@@ -35,7 +35,7 @@
       			</FXCollections>
       		</items>
       </ChoiceBox>
-      <ChoiceBox fx:id="cb_CommonUrg" layoutX="87.0" layoutY="320.0" prefHeight="25.0" prefWidth="188.0" value="Low">
+      <ChoiceBox fx:id="cb_CommonUrg" layoutX="87.0" layoutY="274.0" prefHeight="25.0" prefWidth="188.0" value="Low">
       		<items>
       			<FXCollections fx:factory="observableArrayList">
       				<String fx:value="Low" />
@@ -44,6 +44,16 @@
       			</FXCollections>
       		</items>
       </ChoiceBox>
-      <Button layoutX="234.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionSaveBtn" text="Save" />
+      <Button layoutX="234.0" layoutY="391.0" mnemonicParsing="false" onAction="#actionSaveBtn" text="Save" />
+      <ChoiceBox fx:id="cb_CommonUrg1" layoutX="87.0" layoutY="321.0" prefHeight="25.0" prefWidth="188.0" value="Low">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Low" />
+               <String fx:value="Medium" />
+               <String fx:value="High" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="16.0" layoutY="309.0" prefHeight="49.0" prefWidth="61.0" text="Initiated DPT" wrapText="true" />
    </children>
 </AnchorPane>
