@@ -29,6 +29,7 @@ public abstract class Views {
 	public static final String RRJUSTIFICATION = "Views/DptTabRRJustification.fxml";
 	public static final String ROLETYPE = "Views/DptTabRoleType.fxml";
 	public static final String STIMULUSTYPE = "Views/DptTabStimulusType.fxml";
+	public static final String STIMULUSINSTANCE = "Views/DpiTabStimulusInstance.fxml";
 	public static final String SYMBOLICGOALTYPE = "Views/DptTabSymbolicGoalType.fxml";
 	
 	public static String getOrgStructTypeView(OrganizationalUnitType org) {

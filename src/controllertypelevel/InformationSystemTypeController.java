@@ -27,6 +27,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.InformationSystemType;
 import supportrequirements.InformationType;
 import supportrequirements.SupportRequirementType;
@@ -357,6 +358,12 @@ public class InformationSystemTypeController implements Initializable, IControll
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

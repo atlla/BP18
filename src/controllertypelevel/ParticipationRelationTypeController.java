@@ -35,6 +35,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import organizationalunits.BoardType;
 import organizationalunits.CommiteeType;
 import organizationalunits.OrganizationalUnitType;
@@ -354,6 +355,12 @@ public class ParticipationRelationTypeController implements Initializable, ICont
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

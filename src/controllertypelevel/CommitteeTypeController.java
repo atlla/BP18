@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import organizationalunits.CommiteeType;
 import organizationalunits.OrganizationalUnitType;
 
@@ -163,6 +164,12 @@ public class CommitteeTypeController implements Initializable, IOrgStructTypeCon
 	public void setOrganizationalUnitType(OrganizationalUnitType type) {
 
 		this.orgUnT = type;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

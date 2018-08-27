@@ -23,6 +23,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
+import main.MainScreenController;
 
 public class ChooseDptEditController implements Initializable, IControllerTypeLevel {
 
@@ -136,6 +137,12 @@ public class ChooseDptEditController implements Initializable, IControllerTypeLe
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

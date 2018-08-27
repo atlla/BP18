@@ -18,6 +18,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.InformationType;
 
 public class NewInformationTypeController implements Initializable, IControllerTypeLevel {
@@ -111,6 +112,12 @@ public class NewInformationTypeController implements Initializable, IControllerT
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

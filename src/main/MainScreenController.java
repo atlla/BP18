@@ -29,9 +29,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.Modality;
@@ -48,6 +51,20 @@ public class MainScreenController {
 
 	@FXML
 	private TabPane tabPane;
+	@FXML
+	private BarChart mainChart;
+	@FXML
+	private Button generateEvaluation;
+	@FXML
+	private Button EditSelectionInstance;
+	@FXML
+	private Button showSelection;
+	@FXML
+	private Label nameSelection;
+	
+	
+	
+	//private Boolean SiSaved;
 
 	public MainScreenController() {
 
@@ -59,16 +76,25 @@ public class MainScreenController {
 
 		Platform.exit();
 	}
-
+	
+	public void setVisibleOfMainScreenElements (boolean visible) {
+		mainChart.setVisible(visible);
+		generateEvaluation.setVisible(visible);
+		EditSelectionInstance.setVisible(visible);
+		showSelection.setVisible(visible);
+		nameSelection.setVisible(visible);
+	}
+	
 	// neues Tab zur Eingabe f�r Decision Process Types
 	@FXML
 	void newDpt(ActionEvent event) throws IOException {
 
 		try {
-
+			
 			IDptTabController con = ControllerFactory.getDptTabController(new DecisionProcessType(), tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
 			TabFactory.createAndShowDptTab(Views.MSDECPROCTYPETAB, "New DPT", con);
+			setVisibleOfMainScreenElements(false);
 
 		} catch (MalformedURLException e) {
 
@@ -84,6 +110,7 @@ public class MainScreenController {
 			IControllerTypeLevel con = ControllerFactory.getChooseDptEditController(tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
 			StageFactory.createAndShowStage("Choose DPT type to edit", false, Views.CHOOSEDPTTOEDIT, con);
+			setVisibleOfMainScreenElements(false);
 
 		} catch (MalformedURLException e) {
 
@@ -112,6 +139,7 @@ public class MainScreenController {
 				if (alert.getResult() == ButtonType.CANCEL) {
 
 					arg0.consume();
+
 				} else {
 
 					if (em.isOpen()) {
@@ -129,17 +157,46 @@ public class MainScreenController {
 	void newDpi(ActionEvent event) throws IOException {
 
 		try {
+			//für die (klein-)Fenstererstellung 
+			EntityManager cem = DatabaseManager.getInstance().getEmf().createEntityManager();
+			IControllerTypeLevel con = ControllerFactory.getStimulusInstanceController(cem);
+					/*getStimulusTypeController(dpt,
+					lv_stimTypes.getSelectionModel().getSelectedItem(), em);*/
+			con.setMsc(this);
+			StageFactory.createAndShowStage("Edit Stimulustype", false, Views.STIMULUSINSTANCE, con);
+			
+			/*if (SiSaved) {
+							//für die Tab Erstellung
+			IDpiTabController con2 = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
+					cem);
+			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con2);
+			}*/
+			
+		} catch (MalformedURLException e) {
 
-			IDpiTabController con = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
+			e.printStackTrace();
+		}
+		//SiSaved = false;
+	}
+	
+	public void newDpiTab() throws IOException {
+		try {
+			//für die Tab Erstellung  // Evtl. StimulusINstance über den aufruf hergeben
+			IDpiTabController con2 = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
-			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con);
+			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con2);
+			setVisibleOfMainScreenElements(false);
 			
 		} catch (MalformedURLException e) {
 
 			e.printStackTrace();
 		}
 	}
-
+	
+	public TabPane GetTabPane() {
+		return tabPane;
+	}
+	
 	// Methoden zur Eingabe von Typen (die unabh�ngig von einem DPT etc.
 	// eingegeben werden k�nnen!)
 	@FXML

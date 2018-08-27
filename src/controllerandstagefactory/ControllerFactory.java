@@ -27,6 +27,7 @@ import controllertypelevel.PositionTypeController;
 import controllertypelevel.PresumedInfluenceRelController;
 import controllertypelevel.RelevanceRelationTypeController;
 import controllertypelevel.RoleTypeController;
+import controllertypelevel.StimulusInstanceController;
 import controllertypelevel.StimulusTypeController;
 import controllertypelevel.SuppReqHelperController;
 import controllertypelevel.SymbolicGoalTypeController;
@@ -43,6 +44,7 @@ import decisionpremise.RelevanceRelationType;
 import decisionpremise.SymbolicGoalType;
 import decisionprocess.DecisionProcessInstance;
 import decisionprocess.DecisionProcessType;
+import decisionprocess.StimulusInstance;
 import decisionprocess.StimulusType;
 import helpercomponents.Views;
 import javafx.scene.control.ListView;
@@ -163,7 +165,17 @@ public final class ControllerFactory {
 		con.setSt(st);
 		return con;
 	}
+	
+	public static IControllerTypeLevel getStimulusInstanceController(/*DecisionProcessType decProcT, StimulusInstance si,*/
+			EntityManager em) {
 
+		StimulusInstanceController con = new StimulusInstanceController();
+		con.setEm(em);
+		//con.setDpt(decProcT);
+		con.setSi(new StimulusInstance());
+		return con;
+	}
+	
 	public static IControllerTypeLevel getParticipationRelTypeController(ParticipationRelationType prt, DecisionProcessType dpt,
 			EntityManager em) {
 

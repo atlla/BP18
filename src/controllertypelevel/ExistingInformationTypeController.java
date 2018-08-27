@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.InformationType;
 
 public class ExistingInformationTypeController implements Initializable, IControllerTypeLevel {
@@ -78,6 +79,12 @@ public class ExistingInformationTypeController implements Initializable, IContro
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

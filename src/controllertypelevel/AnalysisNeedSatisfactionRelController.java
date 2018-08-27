@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.AnalysisNeedSatisfactionRelationType;
 import supportrequirements.AnalysisNeedType;
 import supportrequirements.InformationSystemType;
@@ -121,6 +122,12 @@ public class AnalysisNeedSatisfactionRelController implements Initializable, ICo
 	public void setEntityManager(EntityManager em) {
 		
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

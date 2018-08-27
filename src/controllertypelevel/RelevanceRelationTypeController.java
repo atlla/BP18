@@ -29,6 +29,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.SupportRequirementType;
 
 public class RelevanceRelationTypeController implements Initializable, IControllerTypeLevel {
@@ -322,6 +323,12 @@ public class RelevanceRelationTypeController implements Initializable, IControll
 	public void setEntityManager(EntityManager em) {
 
 		this.em = em;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

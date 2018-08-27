@@ -19,6 +19,7 @@ import helpercomponents.AlertDialogFactory;
 import helpercomponents.Views;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -38,7 +39,8 @@ public class ActionVariableTypeController implements IDecisionPremiseTypeControl
 	private boolean onEdit;
 	private String nameBeforeEdit;
 	private DecisionPremiseType selectedItem;
-
+	private MainScreenController msc;
+	
 	@FXML
 	private ChoiceBox<String> cb_quality;
 
@@ -56,6 +58,7 @@ public class ActionVariableTypeController implements IDecisionPremiseTypeControl
 	
 	@FXML
 	private SuppReqHelperController embeddedSuppReqViewController;
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -208,5 +211,11 @@ public class ActionVariableTypeController implements IDecisionPremiseTypeControl
 
 		this.decPremT = decPremT;
 	}
+	
+	@Override
+	public void setMsc(MainScreenController msc) {
+		this.msc = msc;
+	}
+	
 
 }

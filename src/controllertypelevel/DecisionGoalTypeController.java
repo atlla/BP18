@@ -23,6 +23,7 @@ import helpercomponents.AlertDialogFactory;
 import helpercomponents.Views;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.AnalysisNeedType;
 import supportrequirements.SupportRequirementType;
 import javafx.event.ActionEvent;
@@ -194,6 +195,12 @@ public class DecisionGoalTypeController implements IDecisionPremiseTypeControlle
 	public void setDecPremT(DecisionPremiseType decPremT) {
 
 		this.decPremT = decPremT;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

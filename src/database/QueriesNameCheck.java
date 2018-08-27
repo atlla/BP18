@@ -7,6 +7,7 @@ import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 
 import decisionpremise.DecisionPremiseType;
+import decisionprocess.DecisionProcessInstance;
 import decisionprocess.DecisionProcessType;
 import decisionprocess.StimulusType;
 import helpercomponents.AlertDialogFactory;
@@ -28,6 +29,26 @@ public final class QueriesNameCheck {
 			TypedQuery<DecisionProcessType> q1 = em.createQuery(
 					"SELECT dpt FROM DecisionProcessType dpt WHERE dpt.name = '" + name + "'",
 					DecisionProcessType.class);
+			if (q1.getResultList().size() > 0) {
+
+				return false;
+			}
+			em.close();
+		} catch (Exception e) {
+
+			return true;
+		}
+
+		return true;
+	}
+	
+	public static boolean dpiNameCheck(String name) {
+
+		try {
+			EntityManager em = generateEm();
+			TypedQuery<DecisionProcessInstance> q1 = em.createQuery(
+					"SELECT dpi FROM DecisionProcessInstance dpi WHERE dpi.instanceName = '" + name + "'",
+					DecisionProcessInstance.class);
 			if (q1.getResultList().size() > 0) {
 
 				return false;
@@ -84,7 +105,50 @@ public final class QueriesNameCheck {
 			return true;
 		}
 	}
+	
+	public static boolean dpiEditNameCheck(String oldName, String newName) {
 
+		boolean tmp = true;
+		if (!oldName.equals(newName)) {
+
+			try {
+
+				System.out.println("edit check");
+				System.out.println(newName);
+				EntityManager em = generateEm();
+				EntityType<DecisionProcessInstance> type = em.getMetamodel().entity(DecisionProcessInstance.class);
+				if (type != null) {
+
+					TypedQuery<String> q1 = em.createQuery("SELECT dpi.instanceName FROM DecisionProcessInstance dpi",
+							String.class);
+					if (q1.getResultList().size() > 0) {
+
+						for (String dpt : q1.getResultList()) {
+
+							if (dpt.equals(newName)) {
+
+								tmp = false;
+							}
+						}
+					}
+				} else {
+
+					return true;
+				}
+
+				em.close();
+			} catch (Exception e) {
+
+				e.printStackTrace();
+				return true;
+			}
+			return tmp;
+
+		} else {
+
+			return true;
+		}
+	}
 	public static boolean orgStructTypeNameCheck(String name) {
 
 		try {

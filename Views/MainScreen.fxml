@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -64,7 +65,20 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView layoutY="25.0" prefHeight="743.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="25.0" />
-      <TabPane fx:id="tabPane" layoutX="160.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <ListView layoutY="25.0" prefHeight="743.0" prefWidth="160.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <BarChart fx:id="mainChart" layoutX="200.0" layoutY="180.0" prefHeight="374.0" prefWidth="660.0" title="TestChart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="generateEvaluation" layoutX="666.0" layoutY="550.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="182.0" text="Generate Evaluation" />
+      <Button fx:id="EditSelectionInstance" layoutX="726.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="160.0" text="Edit selected Instance" />
+      <Button fx:id="showSelection" layoutX="204.0" layoutY="66.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="170.0" text="Show selected Instance" />
+      <Label fx:id="nameSelection" alignment="TOP_CENTER" layoutX="396.0" layoutY="66.0" prefHeight="85.0" prefWidth="316.0" text="Selection name: &lt;no selection&gt;" textAlignment="CENTER" wrapText="true" />
+      <TabPane fx:id="tabPane" layoutX="159.0" layoutY="25.0" prefHeight="589.0" prefWidth="767.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <TreeView layoutY="25.0" prefHeight="589.0" prefWidth="160.0" />
    </children>
 </AnchorPane>

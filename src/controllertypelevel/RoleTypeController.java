@@ -19,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import organizationalunits.OrganizationalUnitType;
 import organizationalunits.RoleType;
 
@@ -157,6 +158,12 @@ public class RoleTypeController implements Initializable, IOrgStructTypeControll
 	public void setOrganizationalUnitType(OrganizationalUnitType type) {
 
 		this.orgUnT = type;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

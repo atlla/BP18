@@ -26,6 +26,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainScreenController;
 
 public class EngagementGoalTypeController implements Initializable, IDecisionPremiseTypeController {
 
@@ -160,5 +161,11 @@ public class EngagementGoalTypeController implements Initializable, IDecisionPre
 	public void setDecPremT(DecisionPremiseType decPremT) {
 
 		this.decPremT = decPremT;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 }

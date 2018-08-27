@@ -17,6 +17,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainScreenController;
 
 public class StimulusTypeController implements Initializable, IControllerTypeLevel {
 
@@ -121,7 +122,7 @@ public class StimulusTypeController implements Initializable, IControllerTypeLev
 
 	}
 
-	// Wird aufgerufen um zu überprüfen, ob Felder nicht ausgefüllt wurden vom
+	// Wird aufgerufen um zu ï¿½berprï¿½fen, ob Felder nicht ausgefï¿½llt wurden vom
 	// Nutzer(bspw. name/description etc.)
 	public boolean checkName(String name) {
 		
@@ -162,6 +163,12 @@ public class StimulusTypeController implements Initializable, IControllerTypeLev
 
 	@Override
 	public void setEntityManager(EntityManager em) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
 		// TODO Auto-generated method stub
 		
 	}

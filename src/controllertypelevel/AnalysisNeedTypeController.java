@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import main.MainScreenController;
 import supportrequirements.AnalysisNeedSatisfactionRelationType;
 import supportrequirements.AnalysisNeedType;
 import supportrequirements.InformationSystemType;
@@ -211,6 +212,12 @@ public class AnalysisNeedTypeController implements Initializable, ISuppReqTypeCo
 	public void setSuppReqType(SupportRequirementType suppReq) {
 
 		this.ant = (AnalysisNeedType) suppReq;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -22,7 +22,7 @@ import helpercomponents.Views;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
-
+import main.MainScreenController;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -182,5 +182,11 @@ public class SymbolicGoalTypeController implements IDecisionPremiseTypeControlle
 	public void setDecPremT(DecisionPremiseType decPremT) {
 
 		this.decPremT = decPremT;
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 }

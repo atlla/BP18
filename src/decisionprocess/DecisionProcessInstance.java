@@ -1,19 +1,35 @@
 package decisionprocess;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class DecisionProcessInstance {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Access(AccessType.FIELD)
+	private int id;
+	
+	//private String test;
 	private StringProperty instanceName;
 	private StringProperty instanceGeneralAim;
 	
+//	@Access(AccessType.FIELD)
 	@ManyToOne
 	private DecisionProcessType dptReference;
+//	@Access(AccessType.FIELD)
 	@OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
 	private StimulusInstance stimInstReference;
 

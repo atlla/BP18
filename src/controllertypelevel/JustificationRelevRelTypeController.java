@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.MainScreenController;
 
 public class JustificationRelevRelTypeController implements Initializable, IControllerTypeLevel {
 
@@ -265,6 +266,12 @@ public class JustificationRelevRelTypeController implements Initializable, ICont
 	@Override
 	public void setEntityManager(EntityManager em) {
 
+	}
+
+	@Override
+	public void setMsc(MainScreenController msc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
