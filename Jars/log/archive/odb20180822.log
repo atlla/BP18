@@ -1,0 +1,404 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2018-08-22 12:27:43 #1 store] 
+Database '/Users/safefy/git/BP18/Database/projectDB.odb' is opened by 11593@MacFys-MBP.fritz.box
+
+[2018-08-22 12:27:43 #2 type] 
+Type decisionprocess.DecisionProcessType is not enhanced.
+
+[2018-08-22 12:27:43 #3 type] 
+Type decisionpremise.RelevanceRelationType is not enhanced.
+
+[2018-08-22 12:27:43 #4 type] 
+Type organizationalunits.ParticipationRelationType is not enhanced.
+
+[2018-08-22 12:27:43 #5 type] 
+Type decisionprocess.StimulusType is not enhanced.
+
+[2018-08-22 12:27:43 #6 type] 
+Type decisionpremise.DecisionPremiseType is not enhanced.
+
+[2018-08-22 12:27:43 #7 type] 
+Type organizationalunits.OrganizationalUnitType is not enhanced.
+
+[2018-08-22 12:27:43 #8 type] 
+Type supportrequirements.SupportRequirementType is not enhanced.
+
+[2018-08-22 12:27:43 #9 type] 
+Type organizationalunits.BoardType is not enhanced.
+
+[2018-08-22 12:27:43 #10 type] 
+Type organizationalunits.UnitOfWorkType is not enhanced.
+
+[2018-08-22 12:27:43 #11 type] 
+Type organizationalunits.CommiteeType is not enhanced.
+
+[2018-08-22 12:27:43 #12 type] 
+Type organizationalunits.SingleUnitType is not enhanced.
+
+[2018-08-22 12:27:43 #13 type] 
+Type organizationalunits.PositionType is not enhanced.
+
+[2018-08-22 12:27:43 #14 type] 
+Type organizationalunits.RoleType is not enhanced.
+
+[2018-08-22 12:27:43 #15 type] 
+Type decisionpremise.ValueDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:27:43 #16 type] 
+Type decisionpremise.AbstractGoalType is not enhanced.
+
+[2018-08-22 12:27:43 #17 type] 
+Type decisionpremise.DecisionGoalType is not enhanced.
+
+[2018-08-22 12:27:43 #18 type] 
+Type decisionpremise.Value is not enhanced.
+
+[2018-08-22 12:27:43 #19 type] 
+Type decisionpremise.OrdinalValue is not enhanced.
+
+[2018-08-22 12:27:43 #20 type] 
+Type decisionpremise.RationaleSpec is not enhanced.
+
+[2018-08-22 12:27:43 #21 type] 
+Type decisionpremise.EngagementGoalType is not enhanced.
+
+[2018-08-22 12:27:43 #22 type] 
+Type decisionpremise.SymbolicGoalType is not enhanced.
+
+[2018-08-22 12:27:43 #23 type] 
+Type decisionpremise.FactualDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:27:43 #24 type] 
+Type decisionpremise.ActionVariableType is not enhanced.
+
+[2018-08-22 12:27:43 #25 type] 
+Type decisionpremise.PresumedInfluenceRelationType is not enhanced.
+
+[2018-08-22 12:27:43 #26 type] 
+Type decisionpremise.EnvironmentalFactorType is not enhanced.
+
+[2018-08-22 12:27:43 #27 type] 
+Type supportrequirements.InformationType is not enhanced.
+
+[2018-08-22 12:27:43 #28 type] 
+Type supportrequirements.InformationSystemType is not enhanced.
+
+[2018-08-22 12:27:43 #29 type] 
+Type supportrequirements.InformationNeedSatisfactionRelation is not enhanced.
+
+[2018-08-22 12:27:43 #30 type] 
+Type supportrequirements.AnalysisNeedSatisfactionRelationType is not enhanced.
+
+[2018-08-22 12:27:43 #31 type] 
+Type supportrequirements.InformationNeedType is not enhanced.
+
+[2018-08-22 12:27:43 #32 type] 
+Type supportrequirements.AnalysisNeedType is not enhanced.
+
+[2018-08-22 12:27:43 #33 type] 
+Type decisionpremise.CoherenceRationaleSpec is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2018-08-22 12:28:50 #1 store] 
+Database '/Users/safefy/git/BP18/Database/projectDB.odb' is opened by 11604@MacFys-MBP.fritz.box
+
+[2018-08-22 12:28:50 #2 type] 
+Type decisionprocess.DecisionProcessType is not enhanced.
+
+[2018-08-22 12:28:50 #3 type] 
+Type decisionpremise.RelevanceRelationType is not enhanced.
+
+[2018-08-22 12:28:50 #4 type] 
+Type organizationalunits.ParticipationRelationType is not enhanced.
+
+[2018-08-22 12:28:50 #5 type] 
+Type decisionprocess.StimulusType is not enhanced.
+
+[2018-08-22 12:28:50 #6 type] 
+Type decisionpremise.DecisionPremiseType is not enhanced.
+
+[2018-08-22 12:28:50 #7 type] 
+Type organizationalunits.OrganizationalUnitType is not enhanced.
+
+[2018-08-22 12:28:50 #8 type] 
+Type supportrequirements.SupportRequirementType is not enhanced.
+
+[2018-08-22 12:28:50 #9 type] 
+Type organizationalunits.BoardType is not enhanced.
+
+[2018-08-22 12:28:50 #10 type] 
+Type organizationalunits.UnitOfWorkType is not enhanced.
+
+[2018-08-22 12:28:50 #11 type] 
+Type organizationalunits.CommiteeType is not enhanced.
+
+[2018-08-22 12:28:50 #12 type] 
+Type organizationalunits.SingleUnitType is not enhanced.
+
+[2018-08-22 12:28:50 #13 type] 
+Type organizationalunits.PositionType is not enhanced.
+
+[2018-08-22 12:28:50 #14 type] 
+Type organizationalunits.RoleType is not enhanced.
+
+[2018-08-22 12:28:50 #15 type] 
+Type decisionpremise.ValueDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:28:50 #16 type] 
+Type decisionpremise.AbstractGoalType is not enhanced.
+
+[2018-08-22 12:28:50 #17 type] 
+Type decisionpremise.DecisionGoalType is not enhanced.
+
+[2018-08-22 12:28:50 #18 type] 
+Type decisionpremise.Value is not enhanced.
+
+[2018-08-22 12:28:50 #19 type] 
+Type decisionpremise.OrdinalValue is not enhanced.
+
+[2018-08-22 12:28:50 #20 type] 
+Type decisionpremise.RationaleSpec is not enhanced.
+
+[2018-08-22 12:28:50 #21 type] 
+Type decisionpremise.EngagementGoalType is not enhanced.
+
+[2018-08-22 12:28:50 #22 type] 
+Type decisionpremise.SymbolicGoalType is not enhanced.
+
+[2018-08-22 12:28:50 #23 type] 
+Type decisionpremise.FactualDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:28:50 #24 type] 
+Type decisionpremise.ActionVariableType is not enhanced.
+
+[2018-08-22 12:28:50 #25 type] 
+Type decisionpremise.PresumedInfluenceRelationType is not enhanced.
+
+[2018-08-22 12:28:50 #26 type] 
+Type decisionpremise.EnvironmentalFactorType is not enhanced.
+
+[2018-08-22 12:28:50 #27 type] 
+Type supportrequirements.InformationType is not enhanced.
+
+[2018-08-22 12:28:50 #28 type] 
+Type supportrequirements.InformationSystemType is not enhanced.
+
+[2018-08-22 12:28:50 #29 type] 
+Type supportrequirements.InformationNeedSatisfactionRelation is not enhanced.
+
+[2018-08-22 12:28:50 #30 type] 
+Type supportrequirements.AnalysisNeedSatisfactionRelationType is not enhanced.
+
+[2018-08-22 12:28:50 #31 type] 
+Type supportrequirements.InformationNeedType is not enhanced.
+
+[2018-08-22 12:28:50 #32 type] 
+Type supportrequirements.AnalysisNeedType is not enhanced.
+
+[2018-08-22 12:28:50 #33 type] 
+Type decisionpremise.CoherenceRationaleSpec is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2018-08-22 12:33:47 #1 store] 
+Database '/Users/safefy/git/BP18/Database/projectDB.odb' is opened by 11648@MacFys-MBP.fritz.box
+
+[2018-08-22 12:33:47 #2 type] 
+Type decisionprocess.DecisionProcessType is not enhanced.
+
+[2018-08-22 12:33:47 #3 type] 
+Type decisionpremise.RelevanceRelationType is not enhanced.
+
+[2018-08-22 12:33:47 #4 type] 
+Type organizationalunits.ParticipationRelationType is not enhanced.
+
+[2018-08-22 12:33:47 #5 type] 
+Type decisionprocess.StimulusType is not enhanced.
+
+[2018-08-22 12:33:47 #6 type] 
+Type decisionpremise.DecisionPremiseType is not enhanced.
+
+[2018-08-22 12:33:47 #7 type] 
+Type organizationalunits.OrganizationalUnitType is not enhanced.
+
+[2018-08-22 12:33:47 #8 type] 
+Type supportrequirements.SupportRequirementType is not enhanced.
+
+[2018-08-22 12:33:47 #9 type] 
+Type organizationalunits.BoardType is not enhanced.
+
+[2018-08-22 12:33:47 #10 type] 
+Type organizationalunits.UnitOfWorkType is not enhanced.
+
+[2018-08-22 12:33:47 #11 type] 
+Type organizationalunits.CommiteeType is not enhanced.
+
+[2018-08-22 12:33:47 #12 type] 
+Type organizationalunits.SingleUnitType is not enhanced.
+
+[2018-08-22 12:33:47 #13 type] 
+Type organizationalunits.PositionType is not enhanced.
+
+[2018-08-22 12:33:47 #14 type] 
+Type organizationalunits.RoleType is not enhanced.
+
+[2018-08-22 12:33:47 #15 type] 
+Type decisionpremise.ValueDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:33:47 #16 type] 
+Type decisionpremise.AbstractGoalType is not enhanced.
+
+[2018-08-22 12:33:47 #17 type] 
+Type decisionpremise.DecisionGoalType is not enhanced.
+
+[2018-08-22 12:33:47 #18 type] 
+Type decisionpremise.Value is not enhanced.
+
+[2018-08-22 12:33:47 #19 type] 
+Type decisionpremise.OrdinalValue is not enhanced.
+
+[2018-08-22 12:33:47 #20 type] 
+Type decisionpremise.RationaleSpec is not enhanced.
+
+[2018-08-22 12:33:47 #21 type] 
+Type decisionpremise.EngagementGoalType is not enhanced.
+
+[2018-08-22 12:33:47 #22 type] 
+Type decisionpremise.SymbolicGoalType is not enhanced.
+
+[2018-08-22 12:33:47 #23 type] 
+Type decisionpremise.FactualDecisionPremiseType is not enhanced.
+
+[2018-08-22 12:33:47 #24 type] 
+Type decisionpremise.ActionVariableType is not enhanced.
+
+[2018-08-22 12:33:47 #25 type] 
+Type decisionpremise.PresumedInfluenceRelationType is not enhanced.
+
+[2018-08-22 12:33:47 #26 type] 
+Type decisionpremise.EnvironmentalFactorType is not enhanced.
+
+[2018-08-22 12:33:47 #27 type] 
+Type supportrequirements.InformationType is not enhanced.
+
+[2018-08-22 12:33:47 #28 type] 
+Type supportrequirements.InformationSystemType is not enhanced.
+
+[2018-08-22 12:33:47 #29 type] 
+Type supportrequirements.InformationNeedSatisfactionRelation is not enhanced.
+
+[2018-08-22 12:33:47 #30 type] 
+Type supportrequirements.AnalysisNeedSatisfactionRelationType is not enhanced.
+
+[2018-08-22 12:33:47 #31 type] 
+Type supportrequirements.InformationNeedType is not enhanced.
+
+[2018-08-22 12:33:47 #32 type] 
+Type supportrequirements.AnalysisNeedType is not enhanced.
+
+[2018-08-22 12:33:47 #33 type] 
+Type decisionpremise.CoherenceRationaleSpec is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2018-08-22 13:09:55 #1 store] 
+Database '/Users/safefy/git/BP18/Database/projectDB.odb' is opened by 11904@MacFys-MBP.fritz.box
+
+[2018-08-22 13:09:56 #2 type] 
+Type decisionprocess.DecisionProcessType is not enhanced.
+
+[2018-08-22 13:09:56 #3 type] 
+Type decisionpremise.RelevanceRelationType is not enhanced.
+
+[2018-08-22 13:09:56 #4 type] 
+Type organizationalunits.ParticipationRelationType is not enhanced.
+
+[2018-08-22 13:09:56 #5 type] 
+Type decisionprocess.StimulusType is not enhanced.
+
+[2018-08-22 13:09:56 #6 type] 
+Type decisionpremise.DecisionPremiseType is not enhanced.
+
+[2018-08-22 13:09:56 #7 type] 
+Type organizationalunits.OrganizationalUnitType is not enhanced.
+
+[2018-08-22 13:09:56 #8 type] 
+Type supportrequirements.SupportRequirementType is not enhanced.
+
+[2018-08-22 13:09:56 #9 type] 
+Type organizationalunits.BoardType is not enhanced.
+
+[2018-08-22 13:09:56 #10 type] 
+Type organizationalunits.UnitOfWorkType is not enhanced.
+
+[2018-08-22 13:09:56 #11 type] 
+Type organizationalunits.CommiteeType is not enhanced.
+
+[2018-08-22 13:09:56 #12 type] 
+Type organizationalunits.SingleUnitType is not enhanced.
+
+[2018-08-22 13:09:56 #13 type] 
+Type organizationalunits.PositionType is not enhanced.
+
+[2018-08-22 13:09:56 #14 type] 
+Type organizationalunits.RoleType is not enhanced.
+
+[2018-08-22 13:09:56 #15 type] 
+Type decisionpremise.ValueDecisionPremiseType is not enhanced.
+
+[2018-08-22 13:09:56 #16 type] 
+Type decisionpremise.AbstractGoalType is not enhanced.
+
+[2018-08-22 13:09:56 #17 type] 
+Type decisionpremise.DecisionGoalType is not enhanced.
+
+[2018-08-22 13:09:56 #18 type] 
+Type decisionpremise.Value is not enhanced.
+
+[2018-08-22 13:09:56 #19 type] 
+Type decisionpremise.OrdinalValue is not enhanced.
+
+[2018-08-22 13:09:56 #20 type] 
+Type decisionpremise.RationaleSpec is not enhanced.
+
+[2018-08-22 13:09:56 #21 type] 
+Type decisionpremise.EngagementGoalType is not enhanced.
+
+[2018-08-22 13:09:56 #22 type] 
+Type decisionpremise.SymbolicGoalType is not enhanced.
+
+[2018-08-22 13:09:56 #23 type] 
+Type decisionpremise.FactualDecisionPremiseType is not enhanced.
+
+[2018-08-22 13:09:56 #24 type] 
+Type decisionpremise.ActionVariableType is not enhanced.
+
+[2018-08-22 13:09:56 #25 type] 
+Type decisionpremise.PresumedInfluenceRelationType is not enhanced.
+
+[2018-08-22 13:09:56 #26 type] 
+Type decisionpremise.EnvironmentalFactorType is not enhanced.
+
+[2018-08-22 13:09:56 #27 type] 
+Type supportrequirements.InformationType is not enhanced.
+
+[2018-08-22 13:09:56 #28 type] 
+Type supportrequirements.InformationSystemType is not enhanced.
+
+[2018-08-22 13:09:56 #29 type] 
+Type supportrequirements.InformationNeedSatisfactionRelation is not enhanced.
+
+[2018-08-22 13:09:56 #30 type] 
+Type supportrequirements.AnalysisNeedSatisfactionRelationType is not enhanced.
+
+[2018-08-22 13:09:56 #31 type] 
+Type supportrequirements.InformationNeedType is not enhanced.
+
+[2018-08-22 13:09:56 #32 type] 
+Type supportrequirements.AnalysisNeedType is not enhanced.
+
+[2018-08-22 13:09:56 #33 type] 
+Type decisionpremise.CoherenceRationaleSpec is not enhanced.
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane prefHeight="595.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="16.0" layoutY="61.0" text="Stimulustype" />
+      <TextField fx:id="tf_name" layoutX="105.0" layoutY="19.0" prefHeight="25.0" prefWidth="204.0" AnchorPane.leftAnchor="105.0" />
+      <Button layoutX="105.0" layoutY="217.0" mnemonicParsing="false" onAction="#btn_addStimType" text="  Add  " />
+      <Button layoutX="258.0" layoutY="217.0" mnemonicParsing="false" onAction="#btn_delStimType" text="Delete" />
+      <Button layoutX="182.0" layoutY="217.0" mnemonicParsing="false" onAction="#btn_editStimType" prefHeight="25.0" prefWidth="51.0" text="Edit" />
+      <Label layoutX="16.0" layoutY="23.0" text="Name" />
+      <ListView fx:id="lv_stimTypes" layoutX="106.0" layoutY="61.0" prefHeight="135.0" prefWidth="204.0" />
+      <Label layoutX="14.0" layoutY="320.0" prefHeight="52.0" prefWidth="73.0" text="Participating org. structures" wrapText="true" />
+      <ListView fx:id="lv_partTypes" layoutX="107.0" layoutY="320.0" prefHeight="175.0" prefWidth="200.0" />
+      <Button layoutX="105.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_addPartRelType" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="181.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_editPartType" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="257.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_delPartType" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Label layoutX="361.0" layoutY="9.0" prefHeight="52.0" prefWidth="52.0" text="Relevant decision premises" wrapText="true" />
+      <ListView fx:id="lv_relDecPrem" layoutX="439.0" layoutY="14.0" prefHeight="480.0" prefWidth="240.0" />
+      <Button layoutX="439.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_addRelevanceRelType" prefHeight="25.0" prefWidth="52.0" text="Add" />
+      <Button layoutX="533.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_editRelevanceRel" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="628.0" layoutY="507.0" mnemonicParsing="false" onAction="#btn_delRelevanceRel" prefHeight="25.0" prefWidth="52.0" text="Delete" />
+      <Button layoutX="629.0" layoutY="556.0" mnemonicParsing="false" onAction="#btn_saveAction" prefHeight="25.0" prefWidth="51.0" text="Save" />
+      <ChoiceBox fx:id="cb_activityFocus" layoutX="105.0" layoutY="273.0" prefHeight="25.0" prefWidth="204.0" value="Problem analysis">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Problem analysis" />
+               <String fx:value="Problem solving" />
+               <String fx:value="Search" />
+               <String fx:value="Choice" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Label layoutX="14.0" layoutY="277.0" text="Activity Focus" />
+   </children>
+</AnchorPane>

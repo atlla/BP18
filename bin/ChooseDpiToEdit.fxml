@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="361.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="94.0" prefWidth="78.0" text="Choose Decision Process Instance for editing" wrapText="true" />
+      <Button layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#btn_okAction" prefHeight="27.0" prefWidth="86.0" text="OK" />
+      <ListView fx:id="dpiInstances" layoutX="92.0" layoutY="14.0" prefHeight="261.0" prefWidth="256.0" />
+      <Label layoutX="92.0" layoutY="281.0" text="StimulusInstance of Selection:" />
+      <Label fx:id="siName" layoutX="92.0" layoutY="298.0" prefHeight="17.0" prefWidth="256.0" text="&lt;StimulusInstance&gt;">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button disable="true" layoutX="24.0" layoutY="319.0" mnemonicParsing="false" onAction="#DeleteAllSI" text="Delete All SI" />
+      <Button layoutX="131.0" layoutY="319.0" mnemonicParsing="false" onAction="#SiRead" text="SI Read" />
+   </children>
+</AnchorPane>
