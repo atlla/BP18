@@ -24,6 +24,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -43,25 +45,51 @@ public class DpiTabController implements Initializable, IDpiTabController {
 	private String nameBeforeEdit;
 	private List<Object> relationsToRemove = new ArrayList<>();
 	
+	private MainScreenController msc;
+	
 	@FXML
 	private TextField dpiName;
 	
-	private static EntityManager generateEmTEST() {
+	@FXML
+	private DatePicker dpiDate;
+	
+	@FXML
+	private DatePicker dpiEEDate;
+	
+	@FXML
+	private DatePicker dpiEndDate;
+	
+	@FXML
+	private ChoiceBox<String> dpiPersumedImpact;
+	
+	@FXML 
+	private Label dpiDPT;
+	
+	@FXML
+	private Label dpiStimulusType;
+	
+	@FXML
+	private Label dpiStimulusDate;
+	
+	//TODO für ListViews die entsprechenden Klassen erstellen 
+	
+	//private static EntityManager generateEmTEST() {
 
-		return DatabaseManager.getInstance().getEmf().createEntityManager();
-	}
+	//	return DatabaseManager.getInstance().getEmf().createEntityManager();
+	//}
 	@FXML
 	void testButton(ActionEvent event) {
 	/*	AlertDialogFactory.createStandardInformationAlert("Information",
 				"Database persist",
 				"Test Solution: " + dpi.getInstanceName());
 	*/
-		EntityManager em = generateEmTEST();
+		//EntityManager em = generateEmTEST();
 		TypedQuery<String> q1 = em.createQuery("SELECT dpi.instanceName FROM DecisionProcessInstance dpi", String.class);
 		List<String> t = q1.getResultList();
 		String ts = "";
 		for (String s : t){
 			ts += s + "\n";
+			
 		}
 		
 		AlertDialogFactory.createStandardInformationAlert("Test BUTTON",
@@ -71,7 +99,7 @@ public class DpiTabController implements Initializable, IDpiTabController {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		onEdit = false;
+		//onEdit = false;
 		bindProperties();
 	}
 	
@@ -95,6 +123,22 @@ public class DpiTabController implements Initializable, IDpiTabController {
 */
 			fillLists();
 		}
+		else { 
+			if (dpi.getStimInstReference() == null) {
+				dpiDPT.setText(">Decission Process Type<");
+				dpiStimulusType.setText(">Stimulus Type");
+				dpiStimulusDate.setText(">Stimulus Date");
+			}
+			else {
+				if (dpi.getStimInstReference().getInitatedStimulusType() == null)
+						System.out.println("ST existiert nicht");
+				dpi.setDptReference(dpi.getStimInstReference().getInitatedStimulusType().getDpt());
+				dpiDPT.setText("DPT: " + dpi.getDptReference().getName());
+				dpiStimulusType.setText("ST: "+ dpi.getStimInstReference().getInitatedStimulusType().getName());
+				dpiStimulusDate.setText("StimulusDate: " + dpi.getStimInstReference().getRecorded().toString());
+			}
+		}
+			
 	}
 	private void fillLists() {
 /* ToDo ListView fuellen!
@@ -124,12 +168,13 @@ public class DpiTabController implements Initializable, IDpiTabController {
 				if (!onEdit) {
 
 					if (QueriesNameCheck.dpiNameCheck(dpi.getInstanceName())) {
-						//ToDo Anpassen
-						DatabaseManager.getInstance().persistDpt(dpi, em);
+						//
+						DatabaseManager.getInstance().persistType(dpi, em);
 						tPane.getTabs().remove(tab);
-						AlertDialogFactory.createStandardInformationAlert("Information",
+						/*AlertDialogFactory.createStandardInformationAlert("Information",
 								"Database persist",
-								"A decision process instance is saved!");
+								"A decision process instance is saved!");*/
+						msc.setVisibilityOfMainScreenElements(true);
 
 					} else {
 
@@ -139,16 +184,17 @@ public class DpiTabController implements Initializable, IDpiTabController {
 					}
 
 				} else {
-						//ToDo Anpassen
-					if (QueriesNameCheck.dptEditNameCheck(nameBeforeEdit, dpi.getInstanceName())) {
-						//ToDo Anpassen
+					
+					if (QueriesNameCheck.dpiEditNameCheck(nameBeforeEdit, dpi.getInstanceName())) {
+						
 						removeRelations();
 						DatabaseManager.getInstance().persistDpt(dpi, em);
 						tPane.getTabs().remove(tab);
 						
-						AlertDialogFactory.createStandardInformationAlert("Information",
+						/*AlertDialogFactory.createStandardInformationAlert("Information",
 								"Database persist",
-								"A decision process instance is saved!");
+								"A decision process instance is saved!");*/
+						msc.setVisibilityOfMainScreenElements(true);
 
 					} else {
 
@@ -163,7 +209,7 @@ public class DpiTabController implements Initializable, IDpiTabController {
 						"No stimulus type added! (At least one)");
 			} */
 		} else {
-
+			//TODO Just Error-Dialog, if no name is typed? 
 			AlertDialogFactory.createStandardInformationAlert("Information", "Database persist error",
 					"No name entered for decision process instance!");
 		} 
@@ -231,7 +277,7 @@ public class DpiTabController implements Initializable, IDpiTabController {
 	@Override
 	public void setMsc(MainScreenController msc) {
 		// TODO Auto-generated method stub
-		
+		this.msc = msc;
 	}
 
 

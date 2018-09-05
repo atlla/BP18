@@ -31,6 +31,8 @@ public class ChooseDptEditController implements Initializable, IControllerTypeLe
 	private TabPane tPane;
 	private Stage stage;
 	private String selectedItem;
+	
+	private MainScreenController msc;
 
 	@FXML
 	private ListView<String> lv_types;
@@ -77,7 +79,8 @@ public class ChooseDptEditController implements Initializable, IControllerTypeLe
 			EntityManager em = DatabaseManager.getInstance().getEmf().createEntityManager();
 			IDptTabController con = ControllerFactory.getDptTabController(getDpt(em, selectedItem)
 					, tPane, em);
-			TabFactory.createAndShowDptTab(Views.MSDECPROCTYPETAB, "New DPT", con);
+			TabFactory.createAndShowDptTab(Views.MSDECPROCTYPETAB, "New DPT", con, msc);
+			msc.setVisibilityOfMainScreenElements(false);
 			stage.close();
 //			try {
 
@@ -142,7 +145,7 @@ public class ChooseDptEditController implements Initializable, IControllerTypeLe
 	@Override
 	public void setMsc(MainScreenController msc) {
 		// TODO Auto-generated method stub
-		
+		this.msc = msc;
 	}
 
 }

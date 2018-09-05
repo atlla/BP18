@@ -20,6 +20,7 @@ import decisionpremise.EngagementGoalType;
 import decisionpremise.EnvironmentalFactorType;
 import decisionpremise.SymbolicGoalType;
 import decisionprocess.DecisionProcessType;
+import decisionprocess.StimulusInstance;
 import decisionprocess.DecisionProcessInstance;
 import helpercomponents.Views;
 import javafx.application.Platform;
@@ -77,7 +78,7 @@ public class MainScreenController {
 		Platform.exit();
 	}
 	
-	public void setVisibleOfMainScreenElements (boolean visible) {
+	public void setVisibilityOfMainScreenElements (boolean visible) {
 		mainChart.setVisible(visible);
 		generateEvaluation.setVisible(visible);
 		EditSelectionInstance.setVisible(visible);
@@ -93,8 +94,9 @@ public class MainScreenController {
 			
 			IDptTabController con = ControllerFactory.getDptTabController(new DecisionProcessType(), tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
-			TabFactory.createAndShowDptTab(Views.MSDECPROCTYPETAB, "New DPT", con);
-			setVisibleOfMainScreenElements(false);
+			con.setMsc(this);
+			TabFactory.createAndShowDptTab(Views.MSDECPROCTYPETAB, "New DPT", con, this);
+			setVisibilityOfMainScreenElements(false);
 
 		} catch (MalformedURLException e) {
 
@@ -109,8 +111,8 @@ public class MainScreenController {
 
 			IControllerTypeLevel con = ControllerFactory.getChooseDptEditController(tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
+			con.setMsc(this);
 			StageFactory.createAndShowStage("Choose DPT type to edit", false, Views.CHOOSEDPTTOEDIT, con);
-			setVisibleOfMainScreenElements(false);
 
 		} catch (MalformedURLException e) {
 
@@ -137,16 +139,17 @@ public class MainScreenController {
 				alert.showAndWait();
 
 				if (alert.getResult() == ButtonType.CANCEL) {
-
+					
 					arg0.consume();
 
 				} else {
-
+					
 					if (em.isOpen()) {
 
 						em.close();
 					}
 					tabPane.getTabs().remove(tab);
+					setVisibilityOfMainScreenElements(true);
 				}
 			}
 		});
@@ -157,16 +160,16 @@ public class MainScreenController {
 	void newDpi(ActionEvent event) throws IOException {
 
 		try {
-			//für die (klein-)Fenstererstellung 
+			//Start with Creating a StimulusInstance
 			EntityManager cem = DatabaseManager.getInstance().getEmf().createEntityManager();
-			IControllerTypeLevel con = ControllerFactory.getStimulusInstanceController(cem);
+			IControllerTypeLevel con = ControllerFactory.getStimulusInstanceController(new StimulusInstance(), cem);
 					/*getStimulusTypeController(dpt,
 					lv_stimTypes.getSelectionModel().getSelectedItem(), em);*/
 			con.setMsc(this);
 			StageFactory.createAndShowStage("Edit Stimulustype", false, Views.STIMULUSINSTANCE, con);
 			
 			/*if (SiSaved) {
-							//für die Tab Erstellung
+			//für die Tab Erstellung
 			IDpiTabController con2 = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
 					cem);
 			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con2);
@@ -179,13 +182,16 @@ public class MainScreenController {
 		//SiSaved = false;
 	}
 	
-	public void newDpiTab() throws IOException {
+	public void newDpiTab(StimulusInstance si, DecisionProcessInstance dpi) throws IOException {
 		try {
 			//für die Tab Erstellung  // Evtl. StimulusINstance über den aufruf hergeben
-			IDpiTabController con2 = ControllerFactory.getDpiTabController(new DecisionProcessInstance(), tabPane,
+			IDpiTabController con2 = ControllerFactory.getDpiTabController(dpi, tabPane,
 					DatabaseManager.getInstance().getEmf().createEntityManager());
-			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con2);
-			setVisibleOfMainScreenElements(false);
+			//si.setInitiatedDpi(dpi);
+			dpi.setStimInstReference(si);
+			con2.setMsc(this);
+			TabFactory.createAndShowDpiTab(Views.MSDECPROCINSTTAB, "New DPI", con2, this);
+			setVisibilityOfMainScreenElements(false);
 			
 		} catch (MalformedURLException e) {
 
@@ -195,6 +201,78 @@ public class MainScreenController {
 	
 	public TabPane GetTabPane() {
 		return tabPane;
+	}
+	
+	@FXML
+	public void editDpiTab(ActionEvent event) throws IOException  {
+		try {
+
+			IControllerTypeLevel con = ControllerFactory.getChooseDpiEditController(tabPane,
+					DatabaseManager.getInstance().getEmf().createEntityManager());
+			con.setMsc(this);
+			StageFactory.createAndShowStage("Choose DPI to edit", false, Views.CHOOSEDPITOEDIT, con);
+			//setVisibilityOfMainScreenElements(false);
+
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void deleteDpiTab(ActionEvent event) throws IOException{
+		try {
+
+			IControllerTypeLevel con = ControllerFactory.getChooseDpiDeleteController(tabPane,
+					DatabaseManager.getInstance().getEmf().createEntityManager());
+			con.setMsc(this);
+			StageFactory.createAndShowStage("Choose DPI to delete", false, Views.CHOOSEDPITOEDIT, con);
+			//setVisibilityOfMainScreenElements(false);
+
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void editStimulusInstance(ActionEvent event) throws IOException {
+		try {
+			IControllerTypeLevel con = ControllerFactory.getChooseSIEditController(tabPane,
+					DatabaseManager.getInstance().getEmf().createEntityManager());
+			con.setMsc(this);
+			StageFactory.createAndShowStage("Choose SI to edit", false, Views.CHOOSESITOEDIT, con);
+			//setVisibilityOfMainScreenElements(false);
+		}
+		catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	public void deleteStimulusInstance(ActionEvent event) throws IOException {
+		try {
+			IControllerTypeLevel con = ControllerFactory.getChooseSIDeleteController(tabPane,
+					DatabaseManager.getInstance().getEmf().createEntityManager());
+			con.setMsc(this);
+			StageFactory.createAndShowStage("Choose SI to delete", false, Views.CHOOSESITOEDIT, con);
+			//setVisibilityOfMainScreenElements(false);
+		}
+		catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// Methoden zur Eingabe von Typen (die unabh�ngig von einem DPT etc.

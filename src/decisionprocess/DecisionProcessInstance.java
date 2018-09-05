@@ -25,6 +25,7 @@ public class DecisionProcessInstance {
 	//private String test;
 	private StringProperty instanceName;
 	private StringProperty instanceGeneralAim;
+	private boolean noType;
 	
 //	@Access(AccessType.FIELD)
 	@ManyToOne
@@ -81,5 +82,21 @@ public class DecisionProcessInstance {
 		
 		this.dptReference = dptReference;
 	}
+	public void setStimInstReference(StimulusInstance stimInstReference) {
+		this.stimInstReference = stimInstReference;
+	}
+	public StimulusInstance getStimInstReference() {
+		return stimInstReference;
+	}
 
+	public boolean hasNoType() {
+		return noType;
+	}
+
+	public void setNoType(boolean noType) {
+		this.noType = noType;
+	}
+	public int getId() {
+		return id;
+	}
 }

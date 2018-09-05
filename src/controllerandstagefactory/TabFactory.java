@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import main.MainScreenController;
 import javafx.scene.control.Alert.AlertType;
 
 public final class TabFactory {
@@ -24,14 +25,14 @@ public final class TabFactory {
 		
 	}
 	
-	public static void createAndShowDptTab(String viewName, String title, IDptTabController con) throws IOException {
+	public static void createAndShowDptTab(String viewName, String title, IDptTabController con, MainScreenController msc) throws IOException {
 		
 		try {
 			Tab tab = new Tab(title);
 			FXMLLoader loader = new FXMLLoader(new File(Views.MSDECPROCTYPETAB).toURI().toURL());
 			con.setDptTab(tab);
 			loader.setController(con);
-			setCloseTabListener(con.getTpane(), tab, con.getEm());
+			setCloseTabListener(con.getTpane(), tab, con.getEm(), msc);
 			tab.setContent(loader.load());
 			con.getTpane().getTabs().add(tab);
 			con.getTpane().getSelectionModel().select(tab);
@@ -41,14 +42,14 @@ public final class TabFactory {
 			e.printStackTrace();
 		}
 	}
-	public static void createAndShowDpiTab(String viewName, String title, IDpiTabController con) throws IOException {
+	public static void createAndShowDpiTab(String viewName, String title, IDpiTabController con, MainScreenController msc) throws IOException {
 		
 		try {
 			Tab tab = new Tab(title);
 			FXMLLoader loader = new FXMLLoader(new File(Views.MSDECPROCINSTTAB).toURI().toURL());
 			con.setDpiTab(tab);
 			loader.setController(con);
-			setCloseTabListener(con.getTpane(), tab, con.getEm());
+			setCloseTabListener(con.getTpane(), tab, con.getEm(), msc);
 			tab.setContent(loader.load());
 			con.getTpane().getTabs().add(tab);
 			con.getTpane().getSelectionModel().select(tab);
@@ -59,7 +60,7 @@ public final class TabFactory {
 		}
 	}
 	// Listener, wenn dass Tab geschlossen werden soll
-	private static void setCloseTabListener(TabPane tPane, Tab tab, EntityManager em) {
+	private static void setCloseTabListener(TabPane tPane, Tab tab, EntityManager em, MainScreenController msc) {
 
 		tab.setOnCloseRequest(new EventHandler<Event>() {
 
@@ -83,6 +84,7 @@ public final class TabFactory {
 						em.close();
 					}
 					tPane.getTabs().remove(tab);
+					msc.setVisibilityOfMainScreenElements(true);
 				}
 			}
 		});

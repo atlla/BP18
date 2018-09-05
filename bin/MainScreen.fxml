@@ -45,19 +45,35 @@
                         </Menu>
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Edit types">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#newDptEditTab" text="Decision Process Type" />
-                     </items>
-                  </Menu>
               <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <Menu mnemonicParsing="false" text="Edit types">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#newDptEditTab" text="Decision Process Type" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit Instance">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#editDpiTab" text="Edit Decision Process Instance" />
+                        <MenuItem mnemonicParsing="false" onAction="#editStimulusInstance" text="Edit Stimulus Instance" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Delete">
+                     <items>
+                    <MenuItem mnemonicParsing="false" onAction="#deleteDpiTab" text="Delete Decision Process Instance" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteStimulusInstance" text="Delete Stimulus Instance" />
+                     </items>
+                  </Menu>
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+              <items>
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />

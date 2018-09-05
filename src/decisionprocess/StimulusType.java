@@ -45,6 +45,9 @@ public class StimulusType {
 		this.dpt = st.getDpt();
 	}
 	
+	public int testGetID() {
+		return id;
+	}
 	@Override
 	public String toString() {
 		

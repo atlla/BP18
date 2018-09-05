@@ -41,6 +41,8 @@ public class DptTabController implements Initializable, IDptTabController {
 	private boolean onEdit;
 	private String nameBeforeEdit;
 	private List<Object> relationsToRemove = new ArrayList<>();
+	
+	private MainScreenController msc; 
 
 	@FXML
 	private TextField tf_name;
@@ -133,6 +135,7 @@ public class DptTabController implements Initializable, IDptTabController {
 
 						DatabaseManager.getInstance().persistDpt(dpt, em);
 						tPane.getTabs().remove(tab);
+						msc.setVisibilityOfMainScreenElements(true);
 
 					} else {
 
@@ -148,6 +151,7 @@ public class DptTabController implements Initializable, IDptTabController {
 						removeRelations();
 						DatabaseManager.getInstance().persistDpt(dpt, em);
 						tPane.getTabs().remove(tab);
+						msc.setVisibilityOfMainScreenElements(true);
 
 					} else {
 
@@ -435,7 +439,6 @@ public class DptTabController implements Initializable, IDptTabController {
 
 	@Override
 	public void setMsc(MainScreenController msc) {
-		// TODO Auto-generated method stub
-		
+		this.msc = msc; 
 	}
 }

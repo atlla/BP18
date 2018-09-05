@@ -9,6 +9,7 @@ import javax.persistence.metamodel.Metamodel;
 import decisionpremise.DecisionPremiseType;
 import decisionprocess.DecisionProcessInstance;
 import decisionprocess.DecisionProcessType;
+import decisionprocess.StimulusInstance;
 import decisionprocess.StimulusType;
 import helpercomponents.AlertDialogFactory;
 import organizationalunits.BoardType;
@@ -41,6 +42,7 @@ public final class QueriesNameCheck {
 
 		return true;
 	}
+	
 	
 	public static boolean dpiNameCheck(String name) {
 
@@ -123,9 +125,9 @@ public final class QueriesNameCheck {
 							String.class);
 					if (q1.getResultList().size() > 0) {
 
-						for (String dpt : q1.getResultList()) {
+						for (String dpi : q1.getResultList()) {
 
-							if (dpt.equals(newName)) {
+							if (dpi.equals(newName)) {
 
 								tmp = false;
 							}
@@ -149,6 +151,7 @@ public final class QueriesNameCheck {
 			return true;
 		}
 	}
+	
 	public static boolean orgStructTypeNameCheck(String name) {
 
 		try {
@@ -202,6 +205,58 @@ public final class QueriesNameCheck {
 		}
 	}
 
+	public static boolean stimulusInstanceNameCheck(String name) {
+
+		try {
+			EntityManager em = generateEm();
+			TypedQuery<StimulusInstance> q1 = em
+					.createQuery("SELECT si FROM StimulusInstance si WHERE si.instanceName = '" + name + "'", StimulusInstance.class);
+			if (q1.getResultList().size() > 0) {
+
+				return false;
+			}
+			em.close();
+		} catch (Exception e) {
+
+			return true;
+		}
+
+		return true;
+	}
+	
+	public static boolean stimulusInstanceEditNameCheck(String oldName, String newName) {
+
+		boolean tmp = true;
+		if (!oldName.equals(newName)) {
+
+			try {
+				EntityManager em = generateEm();
+				TypedQuery<StimulusInstance> q1 = em.createQuery("SELECT si FROM StimulusInstance si", StimulusInstance.class);
+				if (q1.getResultList().size() > 0) {
+
+					for (StimulusInstance si : q1.getResultList()) {
+
+						if (si.getInstanceName().equals(newName)) {
+
+							tmp = false;
+						}
+					}
+				}
+				em.close();
+			} catch (Exception e) {
+
+				e.printStackTrace();
+				return true;
+			}
+			return tmp;
+
+		} else {
+
+			return true;
+		}
+	}
+
+	
 	public static boolean stimulusTypeNameCheck(String name) {
 
 		try {
@@ -433,5 +488,30 @@ public final class QueriesNameCheck {
 	private static EntityManager generateEm() {
 
 		return DatabaseManager.getInstance().getEmf().createEntityManager();
+	}
+	
+	public static StimulusType getStimulusTypeFromString(String name) {
+		if (name != null) {
+			try {
+				EntityManager em = generateEm();
+				TypedQuery<StimulusType> q1 = em
+						.createQuery("SELECT st FROM StimulusType st WHERE st.name = '" + name + "'", StimulusType.class);
+				if (q1.getResultList().size() > 0) {
+					
+					em.close();
+					return q1.getResultList().get(0);
+				}
+				else
+					em.close();
+					return null;
+				
+			} catch (Exception e) {
+
+				e.printStackTrace();
+				return null;
+			}
+		
+		}
+		return null;
 	}
 }

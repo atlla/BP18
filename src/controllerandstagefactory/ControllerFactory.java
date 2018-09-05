@@ -6,7 +6,9 @@ import controllertypelevel.ActionVariableTypeController;
 import controllertypelevel.AnalysisNeedSatisfactionRelController;
 import controllertypelevel.AnalysisNeedTypeController;
 import controllertypelevel.BoardTypeController;
+import controllertypelevel.ChooseDpiEditController;
 import controllertypelevel.ChooseDptEditController;
+import controllertypelevel.ChooseStimulusInstanceEditController;
 import controllertypelevel.CommitteeTypeController;
 import controllertypelevel.DecisionGoalTypeController;
 import controllertypelevel.DpiTabController;
@@ -155,7 +157,40 @@ public final class ControllerFactory {
 		con.settPane(tPane);
 		return con;
 	}
+	
+	public static IControllerTypeLevel getChooseDpiEditController(TabPane tPane, EntityManager em) {
 
+		ChooseDpiEditController con = new ChooseDpiEditController();
+		con.setEntityManager(em);
+		con.settPane(tPane);
+		return con;
+	}
+	
+	public static IControllerTypeLevel getChooseDpiDeleteController(TabPane tPane, EntityManager em) {
+
+		ChooseDpiEditController con = new ChooseDpiEditController();
+		con.setEntityManager(em);
+		con.settPane(tPane);
+		con.setDelete(true);
+		return con;
+	}
+
+	public static IControllerTypeLevel getChooseSIEditController(TabPane tPane, EntityManager em) {
+
+		ChooseStimulusInstanceEditController con = new ChooseStimulusInstanceEditController();
+		con.setEntityManager(em);
+		con.settPane(tPane);
+		return con;
+	}
+	public static IControllerTypeLevel getChooseSIDeleteController (TabPane tPane, EntityManager em) {
+		
+		ChooseStimulusInstanceEditController con = new ChooseStimulusInstanceEditController();
+		con.setEntityManager(em);
+		con.settPane(tPane);
+		con.setDelete(true);
+		return con;
+	}
+	
 	public static IControllerTypeLevel getStimulusTypeController(DecisionProcessType decProcT, StimulusType st,
 			EntityManager em) {
 
@@ -166,13 +201,13 @@ public final class ControllerFactory {
 		return con;
 	}
 	
-	public static IControllerTypeLevel getStimulusInstanceController(/*DecisionProcessType decProcT, StimulusInstance si,*/
+	public static IControllerTypeLevel getStimulusInstanceController(/*DecisionProcessType decProcT, */StimulusInstance si,
 			EntityManager em) {
 
 		StimulusInstanceController con = new StimulusInstanceController();
 		con.setEm(em);
 		//con.setDpt(decProcT);
-		con.setSi(new StimulusInstance());
+		con.setSi(si);
 		return con;
 	}
 	

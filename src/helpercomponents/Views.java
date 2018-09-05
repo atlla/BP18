@@ -12,6 +12,8 @@ public abstract class Views {
 	public static final String ANALYSISNEEDSATISFACTIONRELATIONTYPE = "Views/DptTabAnalysisNeedSatisfactionRelationType.fxml";
 	public static final String BOARDTYPE = "Views/DptTabBoardType.fxml";
 	public static final String CHOOSEDPTTOEDIT = "Views/ChooseDptToEdit.fxml";
+	public static final String CHOOSEDPITOEDIT = "Views/ChooseDpiToEdit.fxml";
+	public static final String CHOOSESITOEDIT = "Views/ChooseStimulusInstanceToEdit.fxml";
 	public static final String COMMITTEETYPE = "Views/DptTabCommitteeType.fxml";
 	public static final String DECISIONGOALTYPE = "Views/DptTabDecisionGoalType.fxml";	
 	public static final String ENGAGEMENTGOALTYPE = "Views/DptTabEngagementGoalType.fxml";	

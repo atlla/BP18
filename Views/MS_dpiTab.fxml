@@ -12,10 +12,10 @@
    <children>
       <Label layoutX="13.0" layoutY="139.0" text="Name" />
       <TextField fx:id="dpiName" layoutX="108.0" layoutY="134.0" prefHeight="27.0" prefWidth="245.0" />
-      <Button layoutX="502.0" layoutY="500.0" mnemonicParsing="false" onAction="#btn_saveInstance" prefHeight="27.0" prefWidth="177.0" text="Save" />
-      <Label alignment="TOP_LEFT" layoutX="375.0" layoutY="205.0" prefHeight="52.0" prefWidth="71.0" text="Decision Premises" wrapText="true" />
+      <Button layoutX="513.0" layoutY="489.0" mnemonicParsing="false" onAction="#btn_saveInstance" prefHeight="27.0" prefWidth="177.0" text="Save" />
+      <Label alignment="TOP_LEFT" layoutX="375.0" layoutY="84.0" prefHeight="52.0" prefWidth="71.0" text="Decision Premises" wrapText="true" />
       <Label layoutX="13.0" layoutY="172.0" text="Decision Aim" />
-      <ChoiceBox fx:id="cb_presumedImpact" layoutX="107.0" layoutY="313.0" prefHeight="25.0" prefWidth="245.0" value="Low">
+      <ChoiceBox fx:id="dpiPersumedImpact" layoutX="107.0" layoutY="313.0" prefHeight="25.0" prefWidth="245.0" value="Low">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Low" />
@@ -27,25 +27,26 @@
       <Label alignment="TOP_LEFT" layoutX="9.0" layoutY="317.0" prefHeight="34.0" prefWidth="89.0" text="Presumed Impact" wrapText="true" />
       <DatePicker fx:id="dpiDate" layoutX="108.0" layoutY="88.0" prefHeight="27.0" prefWidth="245.0" />
       <Label layoutX="14.0" layoutY="93.0" text="Start" />
-      <Label layoutX="17.0" layoutY="28.0" text="&gt;Decission Process Type&lt;" />
-      <DatePicker fx:id="dpiDate1" layoutX="108.0" layoutY="267.0" prefHeight="27.0" prefWidth="245.0" />
-      <Label layoutX="10.0" layoutY="272.0" text="Estimated End" />
-      <TreeView layoutX="108.0" layoutY="172.0" prefHeight="78.0" prefWidth="245.0" />
-      <Label layoutX="17.0" layoutY="54.0" text="&gt;Stimulus Type&lt;" />
-      <Label layoutX="170.0" layoutY="54.0" text="&gt;Stimulus Date&lt;" />
-      <DatePicker fx:id="dpiDate11" layoutX="443.0" layoutY="370.0" prefHeight="27.0" prefWidth="252.0" />
-      <Label layoutX="375.0" layoutY="375.0" text="End Date" />
-      <ListView layoutX="450.0" layoutY="205.0" prefHeight="91.0" prefWidth="245.0" />
-      <Button layoutX="451.0" layoutY="306.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="505.0" layoutY="306.0" mnemonicParsing="false" text="Edit" />
-      <ListView layoutX="450.0" layoutY="28.0" prefHeight="132.0" prefWidth="245.0" />
-      <Label alignment="TOP_LEFT" layoutX="367.0" layoutY="28.0" prefHeight="34.0" prefWidth="80.0" text="Participating Dep." wrapText="true" />
-      <Button layoutX="451.0" layoutY="165.0" mnemonicParsing="false" text="Edit" />
-      <ListView layoutX="443.0" layoutY="411.0" prefHeight="27.0" prefWidth="252.0" />
-      <Button layoutX="443.0" layoutY="447.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="505.0" layoutY="447.0" mnemonicParsing="false" text="Edit" />
-      <Label layoutX="327.0" layoutY="416.0" text="Decision Result" />
-      <Button layoutX="601.0" layoutY="447.0" mnemonicParsing="false" text="View Details" />
-      <Button layoutX="31.0" layoutY="460.0" mnemonicParsing="false" onAction="#testButton" text="Test-Button: DPI von der Datenbank auflisten" />
+      <Label fx:id="dpiDPT" layoutX="17.0" layoutY="20.0" text="&gt;Decission Process Type&lt;" />
+      <DatePicker fx:id="dpiEEDate" layoutX="108.0" layoutY="267.0" prefHeight="27.0" prefWidth="245.0" />
+      <Label layoutX="9.0" layoutY="272.0" text="Estimated End" />
+      <TreeView fx:id="dpiDesicionAim" layoutX="108.0" layoutY="172.0" prefHeight="78.0" prefWidth="245.0" />
+      <Label fx:id="dpiStimulusType" layoutX="17.0" layoutY="46.0" text="&gt;Stimulus Type&lt;" />
+      <Label fx:id="dpiStimulusDate" layoutX="209.0" layoutY="46.0" text="&gt;Stimulus Date&lt;" />
+      <DatePicker fx:id="dpiEndDate" layoutX="443.0" layoutY="223.0" prefHeight="27.0" prefWidth="252.0" />
+      <Label layoutX="375.0" layoutY="228.0" text="End Date" />
+      <ListView fx:id="dpiDP" layoutX="450.0" layoutY="84.0" prefHeight="96.0" prefWidth="245.0" />
+      <Button layoutX="451.0" layoutY="185.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="505.0" layoutY="185.0" mnemonicParsing="false" text="Edit" />
+      <ListView fx:id="DpiPD" layoutX="107.0" layoutY="361.0" prefHeight="109.0" prefWidth="245.0" />
+      <Label alignment="TOP_LEFT" layoutX="9.0" layoutY="367.0" prefHeight="34.0" prefWidth="80.0" text="Participating Dep." wrapText="true" />
+      <Button layoutX="108.0" layoutY="476.0" mnemonicParsing="false" text="Edit" />
+      <ListView fx:id="dpiResult" layoutX="444.0" layoutY="267.0" prefHeight="109.0" prefWidth="252.0" />
+      <Button layoutX="445.0" layoutY="384.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="504.0" layoutY="384.0" mnemonicParsing="false" text="Edit" />
+      <Label layoutX="375.0" layoutY="272.0" prefHeight="34.0" prefWidth="56.0" text="Decision Result" wrapText="true" />
+      <Button layoutX="600.0" layoutY="384.0" mnemonicParsing="false" text="View Details" />
+      <Button layoutX="179.0" layoutY="514.0" mnemonicParsing="false" onAction="#testButton" text="Test-Button: DPI von der Datenbank auflisten" />
+      <Separator layoutX="3.0" layoutY="69.0" prefHeight="5.0" prefWidth="315.0" />
    </children>
 </AnchorPane>

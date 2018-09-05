@@ -33,7 +33,7 @@ public class DatabaseManager {
 		
 		if(emf == null){
 			
-			System.out.println("ausführen Datenbank write");
+			System.out.println("ausfï¿½hren Datenbank write");
 			emf = Persistence.createEntityManagerFactory("database/projectDB.odb");
 		}
 		return emf;
@@ -49,6 +49,14 @@ public class DatabaseManager {
 	}
 	
 	public void persistDpt(Object o, EntityManager em) {
+		
+		em.getTransaction().begin();
+		em.persist(o);
+		em.getTransaction().commit();
+		em.close();
+	}
+	
+	public void persistType(Object o, EntityManager em) {
 		
 		em.getTransaction().begin();
 		em.persist(o);
